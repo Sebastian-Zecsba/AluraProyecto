@@ -5,53 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
     <link rel="stylesheet" href="styles.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <header class="header">
-         <picture class="box_header_image">
+        <picture class="box_header_image">
             <img src="assets/Logo.png" alt="Logo Alura - Zecsba"> 
-         </picture>
+        </picture>
     </header>
-
     <main class="content_main">
-        
         <section class="main_box_form">
-            <form>
-
-                <textarea name="" id="" placeholder="Ingrese el texto aqui"></textarea>
-
+            <form id="form_encripador">
+                <textarea id="textEncript" placeholder="Ingrese el texto aquí"></textarea>
                 <img src="assets/Explcamacióm.png" alt="Zecsba">
-
-                <div class="box_buttons ">
-                    <button class="button_blue">Encriptar</button>
-                    <button class="white">Desencriptar</button>
+                <div class="box_buttons">
+                    <button type="button" id="encriptar" class="button_blue encriptar">Encriptar</button>
+                    <button type="button" id="desencriptar" class="white">Desencriptar</button>
                 </div>
-
             </form>
         </section>
-
         <section class="main_box_result">
-
             <div class="box_image">
                 <picture class="box_result_image">
                     <img src="assets/Muñeco.png" alt="Alura Latam - Zecsba">
                 </picture>
             </div>
-            
             <div class="box_text_result">
-                <h2>Ningún mensaje fue encontrado</h2>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                <h2 id="result_heading">Ningún mensaje fue encontrado</h2>
+                <textarea id="result_text" readonly placeholder="El resultado se mostrará aquí"></textarea>
+                <button id="copy" class="button_blue">Copiar</button>
             </div>
-
         </section>
-        
     </main>
-
     <script src="index.js"></script>
 </body>
 </html>

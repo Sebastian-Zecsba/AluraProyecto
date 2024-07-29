@@ -19,6 +19,7 @@ body {
 }
 
 .main_box_form textarea{
+    padding: 10px;
     width: 100%;
     height: 30vh; 
     border: none;
