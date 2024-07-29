@@ -4,6 +4,10 @@ const buttonEncriptar = document.querySelector('#encriptar');
 const buttonDesencriptar = document.querySelector('#desencriptar');
 const buttonCopy = document.querySelector('#copy');
 
+const containerResult = document.querySelector('.box_result')
+const containerWithOut = document.querySelector('.box_with_out_result')
+const boxImage = document.querySelector('.box_image')
+
 eventListeners();
 
 function eventListeners() {
@@ -13,7 +17,7 @@ function eventListeners() {
 }
 
 function encriptartext() {
-    let text = textArea.value;
+    let text = textArea.value.toLowerCase();
     let encriptedText = "";
 
     for (let i = 0; i < text.length; i++) {
@@ -33,28 +37,32 @@ function encriptartext() {
     }
 
     resultTextArea.value = encriptedText;
+
+    containerResult.style.display = 'block'
+    containerWithOut.style.display = 'none'
+    boxImage.style.display = 'none'
 }
 
 function desencriptartext() {
-    let text = textArea.value;
+    let text = textArea.value.toLowerCase();
     let desencriptedText = "";
     
     for (let i = 0; i < text.length; i++) {
         if (text.startsWith('enter', i)) {
             desencriptedText += 'e';
-            i += 4; // Saltar los siguientes 4 caracteres ('nter')
+            i += 4;
         } else if (text.startsWith('imes', i)) {
             desencriptedText += 'i';
-            i += 3; // Saltar los siguientes 3 caracteres ('mes')
+            i += 3;
         } else if (text.startsWith('ai', i)) {
             desencriptedText += 'a';
-            i += 1; // Saltar el siguiente carácter ('i')
+            i += 1;
         } else if (text.startsWith('ober', i)) {
             desencriptedText += 'o';
-            i += 3; // Saltar los siguientes 3 caracteres ('ber')
+            i += 3;
         } else if (text.startsWith('ufat', i)) {
             desencriptedText += 'u';
-            i += 3; // Saltar los siguientes 3 caracteres ('fat')
+            i += 3;
         } else {
             desencriptedText += text[i];
         }
