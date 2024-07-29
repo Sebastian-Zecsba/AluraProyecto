@@ -86,3 +86,60 @@ body {
     font-size: 1.2rem;
     font-weight: 300;
 }
+
+@media (min-width: 768px) {
+    .box_buttons{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .box_buttons button{
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    .box_text_result{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .box_text_result p{
+        margin: 15px auto;
+        width: 100% ;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .content_main {
+        display: flex;
+    }
+
+    .main_box_form{
+        width: 53%;
+        margin-left: 200px;
+    }
+
+    .main_box_form textarea{
+        width: 100%;
+        height: 70vh; 
+        border: none;
+        resize: none;
+        color: var(--dark-blue);
+        font-size: 2rem;
+    }
+
+    .main_box_result{
+        margin: auto;
+    }
+
+    .main_box_result .box_image{
+        display: block;
+    }
+}
