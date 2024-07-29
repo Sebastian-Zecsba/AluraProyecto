@@ -107,8 +107,14 @@ body {
     color: #495057;
     font-size: 2rem;
     resize: none;
+    padding: 10px;
 }
 
+.error_message{
+    color: rgb(255, 0, 0);
+    padding: 15px 0px;
+    font-weight: 600;
+}
 
 @media (min-width: 768px) {
     .box_buttons{

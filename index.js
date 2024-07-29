@@ -3,6 +3,7 @@ const resultTextArea = document.querySelector('#result_text');
 const buttonEncriptar = document.querySelector('#encriptar');
 const buttonDesencriptar = document.querySelector('#desencriptar');
 const buttonCopy = document.querySelector('#copy');
+const errorMsg = document.querySelector('#error_message');
 
 const containerResult = document.querySelector('.box_result')
 const containerWithOut = document.querySelector('.box_with_out_result')
@@ -17,7 +18,12 @@ function eventListeners() {
 }
 
 function encriptartext() {
-    let text = textArea.value.toLowerCase();
+    let text = textArea.value;
+    if (!validarTexto(text)) {
+        errorMsg.textContent = "El texto contiene caracteres no permitidos: acentos, mayúsculas o 'ñ'.";
+        return;
+    }
+    
     let encriptedText = "";
 
     for (let i = 0; i < text.length; i++) {
@@ -44,7 +50,11 @@ function encriptartext() {
 }
 
 function desencriptartext() {
-    let text = textArea.value.toLowerCase();
+    let text = textArea.value;
+    if (!validarTexto(text)) {
+        errorMsg.textContent = "El texto contiene caracteres no permitidos: acentos, mayúsculas o 'ñ'.";
+        return;
+    }
     let desencriptedText = "";
     
     for (let i = 0; i < text.length; i++) {
@@ -74,4 +84,9 @@ function desencriptartext() {
 function copiarTexto() {
     resultTextArea.select();
     document.execCommand('copy');
+}
+
+function validarTexto(text) {
+    const regex = /^[a-z\s]*$/;
+    return regex.test(text);
 }
