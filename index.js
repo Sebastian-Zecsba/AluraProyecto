@@ -87,6 +87,6 @@ function copiarTexto() {
 }
 
 function validarTexto(text) {
-    const regex = /^[a-z\s,?.!]*$/;
+    const regex = /^[a-z\s]*$/;
     return regex.test(text);
 }
